@@ -6,17 +6,17 @@ import path from 'path';
 
 var fakeTodos = [{
     id: 'ae06181d-92c2-4fed-a29d-fb53a6301eb9',
-    text: 'Learn about React Ecosystems',
+    text: 'Learn more about React-Redux and thunk',
     isCompleted: false,
     createdAt: new Date(),
 }, {
     id: 'cda9165d-c263-4ef6-af12-3f1271af5fb4',
-    text: 'Get together with friends',
+    text: 'Get together with family',
     isCompleted: false,
     createdAt: new Date(Date.now() - 86400000 * 7),
 }, {
     id: '2e538cc5-b734-4771-a109-dfcd204bb38b',
-    text: 'Buy groceries',
+    text: 'Buy Playstation',
     isCompleted: true,
     createdAt: new Date(Date.now() - 86400000 * 14),
 }];
