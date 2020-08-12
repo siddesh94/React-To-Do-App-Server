@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import uuid from 'uuid';
+import path from 'path';
 
 var fakeTodos = [{
     id: 'ae06181d-92c2-4fed-a29d-fb53a6301eb9',
@@ -24,7 +25,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(express.static(path.join(__dirname, '/build')));
 // The route for getting a list of all todos
 app.get('/todos', (req, res) => {
     res.status(200).json(fakeTodos);
@@ -79,4 +80,7 @@ app.delete('/todos/:id', (req, res) => {
     res.status(200).json(removedTodo);
 });
 
+app.get('*', (req, res) => {
+    res.sendFile(path.json(__dirname + '/build/index.html'));
+})
 app.listen(8080, () => console.log("Server listening on port 8080"));
